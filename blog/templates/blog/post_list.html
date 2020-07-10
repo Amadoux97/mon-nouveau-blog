@@ -7,16 +7,12 @@
             <h1><a href="/">Amadou Blog</a></h1>
         </div>
 
-        <div>
-            <p>published: 10.07.2020, 17:09</p>
-            <h2><a href="">Xibaar bou ndieuk</a></h2>
-            <p>Yeksileine ak djam si smeu site .tey Xibaar yimeu am Xibaar you am solo .Covid 19 miniouy wakh coronavirus ni daneil deuk bi foumou tol ni feine woreutoul te president Macky neineu dagn wara dounde ak virus bi</p>
-        </div>
-
-        <div>
-            <p>published: 10.07.2020, 17:14</p>
-            <h2><a href="">Xibaar n°2</a></h2>
-            <p>Ah deuk bani tak niou wara reik khalate coronavirus bi fane leugnou nara yobé deuk bi dokhatoul,Xaliss ameutoul,niou warar reik wakhtaner economie bi bou Corona bi djlaler beu perei.Plan de relancement bi commencer mais wakhtou bi niou tol ni ndokh sakh nite yi mounounioko am niou daldi latier reik deug bou am djangoro be perei niak ndokh fane reik leugnou nareu deim.</p>
-        </div>
+        {% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
     </body>
 </html>
